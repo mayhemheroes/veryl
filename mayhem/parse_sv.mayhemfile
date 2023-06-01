@@ -1,0 +1,6 @@
+project: veryl
+target: parse-sv
+cmds:
+    - cmd: /parse_sv
+testsuite:
+    - file://testcases/sv
