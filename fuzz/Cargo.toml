@@ -1,0 +1,29 @@
+[package]
+name = "veryl-fuzz"
+version = "0.0.0"
+authors = ["Automatically generated"]
+publish = false
+edition = "2018"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+honggfuzz = "0.5.55"
+veryl-parser = { path = "../crates/parser" }
+
+# Prevent this from interfering with workspaces
+[workspace]
+members = ["."]
+
+[[bin]]
+name = "parse_sv"
+path = "fuzz_targets/parse_sv.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "parse_vl"
+path = "fuzz_targets/parse_vl.rs"
+test = false
+doc = false
